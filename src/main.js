@@ -1,18 +1,22 @@
 const { invoke } = window.__TAURI__.core;
 
-let greetInputEl;
-let greetMsgEl;
-
-async function greet() {
-  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-  greetMsgEl.textContent = await invoke("greet", { name: greetInputEl.value });
-}
-
 window.addEventListener("DOMContentLoaded", () => {
-  greetInputEl = document.querySelector("#greet-input");
-  greetMsgEl = document.querySelector("#greet-msg");
-  document.querySelector("#greet-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    greet();
-  });
+  // Preview toggle functionality
+  const previewToggleBtn = document.querySelector(".preview-toggle");
+  const previewToggleImg = previewToggleBtn?.querySelector("img");
+  let isPreviewVisible = true;
+
+  if (previewToggleBtn && previewToggleImg) {
+    previewToggleBtn.addEventListener("click", () => {
+      isPreviewVisible = !isPreviewVisible;
+      
+      if (isPreviewVisible) {
+        previewToggleImg.src = "./assets/icon-show-preview.svg";
+        previewToggleImg.alt = "Show Preview";
+      } else {
+        previewToggleImg.src = "./assets/icon-hide-preview.svg";
+        previewToggleImg.alt = "Hide Preview";
+      }
+    });
+  }
 });

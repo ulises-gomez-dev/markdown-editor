@@ -12,19 +12,73 @@
     <div class="app">
       <!-- Sidebar start -->
 
-      My Documents New Document
+      <aside class="sidebar">
+        <h2 class="sidebar-title">MY DOCUMENTS</h2>
+        <button class="new-document-btn">
+          + New Document
+        </button>
+        <div class="theme-toggle">
+          <img src="./assets/icon-dark-mode.svg" alt="Dark Mode" />
+          <label class="toggle-switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+          <img src="./assets/icon-light-mode.svg" alt="Light Mode" />
+        </div>
+      </aside>
 
       <!-- Sidebar end -->
 
       <!-- Header start -->
 
-      Document Name Save Changes
+      <nav>
+        <div class="nav-container">
+          <div class="nav-left">
+            <button class="menu-btn">
+              <img src="./assets/icon-menu.svg" alt="Menu" />
+            </button>
+            <div class="logo">
+              <img src="./assets/logo.svg" alt="Markdown" />
+            </div>
+          </div>
+          <div class="nav-center">
+            <div class="document-info">
+              <img src="./assets/icon-document.svg" alt="Document" />
+              <div class="document-details">
+                <span class="save-status">Document Name</span>
+                <span class="document-name">welcome.md</span>
+              </div>
+            </div>
+          </div>
+          <div class="nav-right">
+            <button class="delete-btn">
+              <img src="./assets/icon-delete.svg" alt="Delete" />
+            </button>
+            <button class="save-btn">
+              <img src="./assets/icon-save.svg" alt="Save" />
+              <span>Save Changes</span>
+            </button>
+          </div>
+        </div>
+      </nav>
 
       <!-- Header end -->
 
       <!-- Main start -->
 
-      Markdown Preview
+      <div class="markdown">
+        <header>MARKDOWN</header>
+        <div class="content"></div>
+      </div>
+      <div class="preview">
+        <header>
+          PREVIEW
+          <button class="preview-toggle">
+            <img src="./assets/icon-show-preview.svg" alt="Toggle Preview" />
+          </button>
+        </header>
+        <div class="content"></div>
+      </div>
 
       <!-- Main end -->
     </div>
