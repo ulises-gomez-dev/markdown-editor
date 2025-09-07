@@ -74,6 +74,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   // Preview toggle functionality
   const previewToggleBtn = document.querySelector(".preview-toggle");
   const previewToggleImg = previewToggleBtn?.querySelector("img");
+  const markdownSection = document.querySelector(".markdown");
   let isPreviewVisible = true;
 
   if (previewToggleBtn && previewToggleImg) {
@@ -83,9 +84,15 @@ window.addEventListener("DOMContentLoaded", async () => {
       if (isPreviewVisible) {
         previewToggleImg.src = "./assets/icon-show-preview.svg";
         previewToggleImg.alt = "Show Preview";
+        if (markdownSection) {
+          markdownSection.style.display = "block";
+        }
       } else {
         previewToggleImg.src = "./assets/icon-hide-preview.svg";
         previewToggleImg.alt = "Hide Preview";
+        if (markdownSection) {
+          markdownSection.style.display = "none";
+        }
       }
     });
   }
