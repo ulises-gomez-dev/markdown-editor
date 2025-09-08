@@ -95,6 +95,10 @@
 /* Components layer - mobile-first component styles */
 @layer components {
   /* Mobile-first styles (default) */
+  .sidebar {
+    display: none; /* Hidden by default on load */
+  }
+  
   .document-info {
     gap: 8px;
   }

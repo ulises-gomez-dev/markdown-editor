@@ -54,6 +54,11 @@ window.addEventListener("DOMContentLoaded", async () => {
   const menuImg = menuBtn?.querySelector("img");
   const sidebar = document.querySelector(".sidebar");
   let isSidebarVisible = false;
+  
+  // Hide sidebar initially
+  if (sidebar) {
+    sidebar.style.display = "none";
+  }
 
   if (menuBtn && menuImg && sidebar) {
     menuBtn.addEventListener("click", () => {
