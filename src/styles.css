@@ -23,9 +23,149 @@
 */
 }
 
+@layer reset {
+  /* 
+    (*) targets all elements on the page, to apply styles globally
+    :: used for pseudo-elements (e.g., ::before for generated content)
+  */
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  button {
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     background-color: var(--1000);
     color: var(--400);
+  }
+}
+
+/* Layer definition order - determines cascade priority */
+@layer base, components, responsive;
+
+/* Base layer - fundamental styles */
+@layer base {
+  .sidebar {
+    background: var(--900);
+  }
+
+  .navbar {
+    background: var(--800);
+  }
+
+  .nav-container,
+  .nav-left,
+  .nav-right,
+  .document-info,
+  .editor header {
+    display: flex;
+    align-items: center;
+  }
+
+  .editor header {
+    background: var(--900);
+    justify-content: space-between;
+  }
+}
+
+/* Components layer - mobile-first component styles */
+@layer components {
+  /* Mobile-first styles (default) */
+  .document-info {
+    gap: 8px;
+  }
+
+  .nav-right {
+    margin: 0 8px 0 auto;
+    gap: 12px;
+  }
+
+  .new-document-btn,
+  .save-btn,
+  .menu-btn:hover {
+    background: var(--orange);
+    color: var(--100);
+  }
+
+  .new-document-btn,
+  .save-btn {
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .menu-btn {
+    background: var(--700);
+    height: 56px;
+    width: 56px;
+  }
+}
+
+/* Responsive layer - tablet and desktop overrides */
+@layer responsive {
+  /* Tablet styles - 768px and up */
+  @media (min-width: 768px) {
+    .document-info {
+      gap: 12px;
+    }
+
+    .nav-right {
+      margin: 0 12px 0 auto;
+      gap: 18px;
+    }
+
+    .new-document-btn,
+    .save-btn {
+      height: 40px;
+      padding: 0 16px;
+      font-size: 15px;
+    }
+
+    .menu-btn {
+      height: 72px;
+      width: 72px;
+    }
+  }
+
+  /* Desktop styles - 1024px and up */
+  @media (min-width: 1024px) {
+    .document-info {
+      gap: 16.29px;
+    }
+
+    .nav-right {
+      margin: 0 16px 0 auto;
+      gap: 24px;
+    }
+
+    .new-document-btn,
+    .save-btn {
+      padding: 0 20px;
+    }
   }
 }

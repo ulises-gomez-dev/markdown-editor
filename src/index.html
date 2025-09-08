@@ -14,9 +14,7 @@
 
       <aside class="sidebar">
         <h2 class="sidebar-title">MY DOCUMENTS</h2>
-        <button class="new-document-btn">
-          + New Document
-        </button>
+        <button class="new-document-btn">+ New Document</button>
         <ul class="file-list" id="fileList">
           <!-- Dynamically populated file list will go here -->
         </ul>
@@ -34,7 +32,7 @@
 
       <!-- Header start -->
 
-      <nav>
+      <nav class="navbar">
         <div class="nav-container">
           <div class="nav-left">
             <button class="menu-btn">
@@ -48,8 +46,8 @@
             <div class="document-info">
               <img src="./assets/icon-document.svg" alt="Document" />
               <div class="document-details">
-                <span class="save-status">Document Name</span>
-                <span class="document-name">welcome.md</span>
+                <p class="save-status">Document Name</p>
+                <p class="document-name">welcome.md</p>
               </div>
             </div>
           </div>
@@ -69,19 +67,21 @@
 
       <!-- Main start -->
 
-      <div class="markdown">
-        <header>MARKDOWN</header>
-        <div class="content"></div>
-      </div>
-      <div class="preview">
-        <header>
-          PREVIEW
-          <button class="preview-toggle">
-            <img src="./assets/icon-show-preview.svg" alt="Toggle Preview" />
-          </button>
-        </header>
-        <div class="content"></div>
-      </div>
+      <main class="editor">
+        <div class="markdown">
+          <header>MARKDOWN</header>
+          <div class="content"></div>
+        </div>
+        <div class="preview">
+          <header>
+            PREVIEW
+            <button class="preview-toggle">
+              <img src="./assets/icon-show-preview.svg" alt="Toggle Preview" />
+            </button>
+          </header>
+          <div class="content"></div>
+        </div>
+      </main>
 
       <!-- Main end -->
     </div>
