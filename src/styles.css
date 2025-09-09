@@ -69,8 +69,40 @@
 
 /* Base layer - fundamental styles */
 @layer base {
+  .app {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
   .sidebar {
     background: var(--900);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .sidebar.visible {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s ease;
+    width: 100%;
+  }
+
+  .main-content.shifted {
+    margin-left: 250px;
   }
 
   .navbar {
@@ -90,13 +122,65 @@
     background: var(--900);
     justify-content: space-between;
   }
+
+  .editor {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
 }
 
 /* Components layer - mobile-first component styles */
 @layer components {
   /* Mobile-first styles (default) */
-  .sidebar {
-    display: none; /* Hidden by default on load */
+  .sidebar-title {
+    color: var(--400);
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .file-list {
+    margin: 20px 0;
+  }
+
+  .file-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .file-item:hover {
+    background: var(--800);
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .file-info {
+    margin-left: 12px;
+  }
+
+  .file-date {
+    font-size: 12px;
+    color: var(--500);
+  }
+
+  .file-name {
+    font-size: 14px;
+    color: var(--400);
+    margin-top: 4px;
+  }
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
   }
   
   .document-info {

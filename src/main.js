@@ -53,23 +53,21 @@ window.addEventListener("DOMContentLoaded", async () => {
   const menuBtn = document.querySelector(".menu-btn");
   const menuImg = menuBtn?.querySelector("img");
   const sidebar = document.querySelector(".sidebar");
+  const mainContent = document.querySelector(".main-content");
   let isSidebarVisible = false;
-  
-  // Hide sidebar initially
-  if (sidebar) {
-    sidebar.style.display = "none";
-  }
 
-  if (menuBtn && menuImg && sidebar) {
+  if (menuBtn && menuImg && sidebar && mainContent) {
     menuBtn.addEventListener("click", () => {
       isSidebarVisible = !isSidebarVisible;
       
       if (isSidebarVisible) {
-        sidebar.style.display = "block";
+        sidebar.classList.add("visible");
+        mainContent.classList.add("shifted");
         menuImg.src = "./assets/icon-close.svg";
         menuImg.alt = "Close";
       } else {
-        sidebar.style.display = "none";
+        sidebar.classList.remove("visible");
+        mainContent.classList.remove("shifted");
         menuImg.src = "./assets/icon-menu.svg";
         menuImg.alt = "Menu";
       }
