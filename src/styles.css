@@ -97,12 +97,12 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    transition: margin-left 0.3s ease;
+    transition: transform 0.3s ease;
     width: 100%;
   }
 
   .main-content.shifted {
-    margin-left: 250px;
+    transform: translateX(250px);
   }
 
   .navbar {
@@ -330,6 +330,10 @@
   @media (min-width: 1024px) {
     .document-info {
       gap: 16.29px;
+    }
+
+    .logo {
+        margin: 0 29px 0 24px;
     }
 
     .nav-right {
